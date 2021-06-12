@@ -1,6 +1,6 @@
 import social
 import os
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 
 PORT = os.environ.get('PORT')
 app = Flask(__name__)
@@ -11,6 +11,11 @@ def __check(data):
         return jsonify(data), 201
     else:
         return jsonify({"error": f'user not found'}), 404
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 
 @app.route('/instagram/<string:user>')

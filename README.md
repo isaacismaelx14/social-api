@@ -1,7 +1,7 @@
 # Social Media API (Python)
 
 This API Rest you could get any user data from: `Instgram, Twitter and youtube`. \
-_~ created for Social Dashobard_
+_created for [Social Dashobard](https://github.com/isaacismaelx14/dashboard-react)_
 
 ## Instagram:
 `localhost/instagram/{USER}`

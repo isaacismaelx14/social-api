@@ -1,10 +1,13 @@
 import social
 import os
 import html
+from flask_cors import CORS
 from flask import Flask, jsonify, request, render_template
 
 PORT = os.environ.get('PORT')
+
 app = Flask(__name__)
+CORS(app)
 HTMLTEMPLATE = '''<!DOCTYPE html>
 <html lang="en">
   <head>

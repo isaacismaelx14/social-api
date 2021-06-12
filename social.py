@@ -35,7 +35,7 @@ def youtube(channel_id):
         subs = item["statistics"]["subscriberCount"]
         name = item["snippet"]["localized"]["title"]
         pic_url = item["snippet"]["thumbnails"]["medium"]["url"]
-        return {'followers': subs, 'name': name, 'pic_url': pic_url}
+        return {'followers': int(subs), 'name': name, 'pic_url': pic_url}
     except:
         return False
 

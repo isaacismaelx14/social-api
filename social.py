@@ -53,7 +53,7 @@ def twitter(user):
         data = api.get_user(user)
         userData = data._json
 
-        return {'followers': userData['followers_count'], 'name': userData['name'], 'pic_url': userData['profile_image_url_https']}
+        return {'followers': userData['followers_count'], 'name': userData['name'], 'pic_url': userData['profile_image_url_https'], 'username': user}
     except:
         return False
 
@@ -62,7 +62,8 @@ def instagram(user):
     try:
         instagram = instaloader.Instaloader()
         profile = instaloader.Profile.from_username(instagram.context, user)
-        return {'followers': profile.followers, 'name': profile.full_name, 'pic_url': profile.profile_pic_url}
+
+        return {'followers': profile.followers, 'name': profile.full_name, 'pic_url': profile.profile_pic_url, 'username': user}
     except:
         return False
 
